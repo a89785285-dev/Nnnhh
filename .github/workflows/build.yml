@@ -33,6 +33,9 @@ jobs:
               src="$tmp"
             fi
 
+            # ملفات الـ workflows لا تُنسخ: GITHUB_TOKEN لا يقدر يكتبها
+            rm -rf "$src/.github"
+
             cp -r "$src"/. .
             rm -rf "$tmp"
             echo "Extracted: $file"
